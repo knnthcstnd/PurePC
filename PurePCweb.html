@@ -185,7 +185,514 @@
             background-color: #2563eb;
         }
 
- </style>
+        #cost-calculation-screen .cost-summary {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #eff6ff;
+            border-radius: 10px;
+            border: 1px solid #bfdbfe;
+        }
+        #cost-calculation-screen .cost-summary p {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #4b5563;
+        }
+        #cost-calculation-screen .total-cost {
+            font-size: 42px;
+            font-weight: 700;
+            color: #10b981;
+            margin-top: 10px;
+            letter-spacing: -0.025em;
+        }
+        #cost-calculation-screen .total-cost.over-budget {
+            color: #ef4444;
+        }
+        #cost-calculation-screen .part-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        #cost-calculation-screen .part-item {
+            border: 1px solid #d1d5db;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            background-color: #f9fafb;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        #cost-calculation-screen .part-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        #cost-calculation-screen .part-item img {
+            max-width: 90px;
+            height: auto;
+            margin-bottom: 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            background-color: #ffffff;
+            padding: 5px;
+        }
+        #cost-calculation-screen .part-item h3 {
+            font-size: 19px;
+            margin: 5px 0;
+            color: #1f2937;
+            font-weight: 600;
+        }
+        #cost-calculation-screen .part-item p {
+            font-size: 15px;
+            color: #6b7280;
+            margin-bottom: 5px;
+        }
+        #cost-calculation-screen .part-item p:last-child {
+            font-weight: 600;
+            color: #3b82f6;
+            font-size: 17px;
+        }
+
+        #over-budget-screen .budget-warning {
+            text-align: center;
+            background-color: #fee2e2;
+            color: #dc2626;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            font-size: 24px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: 1px solid #ef4444;
+            box-shadow: 0 2px 8px rgba(239, 68, 68, 0.1);
+        }
+        #over-budget-screen .budget-info {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 18px;
+            color: #4b5563;
+        }
+        #over-budget-screen .budget-info .amount {
+            color: #dc2626;
+            font-weight: 700;
+        }
+        #over-budget-screen .parts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        #over-budget-screen .part-card {
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            background-color: #f9fafb;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        #over-budget-screen .part-card img {
+            max-width: 70px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+            background-color: #ffffff;
+            padding: 5px;
+        }
+        #over-budget-screen .part-details h3 {
+            margin: 0 0 8px 0;
+            font-size: 20px;
+            color: #1f2937;
+            font-weight: 600;
+        }
+        #over-budget-screen .part-details p {
+            margin: 0;
+            font-size: 16px;
+            color: #6b7280;
+        }
+        #over-budget-screen .part-details .price {
+            font-weight: 700;
+            color: #ef4444;
+            font-size: 18px;
+            margin-top: 5px;
+        }
+
+        #alternative-parts-screen .savings-summary {
+            background-color: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 18px;
+            color: #065f46;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.1);
+        }
+        #alternative-parts-screen .savings-summary strong {
+            font-size: 28px;
+            color: #10b981;
+            font-weight: 700;
+            display: block;
+            margin-top: 8px;
+        }
+        #alternative-parts-screen .alternative-parts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        #alternative-parts-screen .part-category {
+            background-color: #f0fdf4;
+            border: 1px solid #d1fae5;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        #alternative-parts-screen .part-category h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #1f2937;
+            font-size: 22px;
+            font-weight: 600;
+            text-align: center;
+            border-bottom: 1px solid #d1d5db;
+            padding-bottom: 12px;
+        }
+        #alternative-parts-screen .alternative-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            padding: 15px;
+            border-radius: 8px;
+            transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+            cursor: pointer;
+        }
+        #alternative-parts-screen .alternative-option:last-child {
+            margin-bottom: 0;
+        }
+        #alternative-parts-screen .alternative-option:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            background-color: #f0f4f8;
+        }
+        #alternative-parts-screen .alternative-option input[type="radio"] {
+            margin-right: 15px;
+            transform: scale(1.3);
+            cursor: pointer;
+        }
+        #alternative-parts-screen .alternative-option img {
+            max-width: 60px;
+            height: auto;
+            margin-right: 15px;
+            border-radius: 6px;
+            border: 1px solid #d1d5db;
+            background-color: #f9fafb;
+            padding: 4px;
+        }
+        #alternative-parts-screen .option-details {
+            flex-grow: 1;
+        }
+        #alternative-parts-screen .option-details p {
+            margin: 0;
+            font-size: 16px;
+            color: #4b5563;
+        }
+        #alternative-parts-screen .option-details .price-diff {
+            font-weight: 700;
+            color: #3b82f6;
+            margin-top: 5px;
+            font-size: 17px;
+        }
+
+        #compatibility-check-screen .compatibility-status {
+            font-size: 22px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        #compatibility-check-screen .status-ok {
+            background-color: #ecfdf5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+        }
+        #compatibility-check-screen .status-warning {
+            background-color: #fffbeb;
+            color: #92400e;
+            border: 1px solid #fcd34d;
+        }
+        #compatibility-check-screen .status-error {
+            background-color: #fef2f2;
+            color: #991b1b;
+            border: 1px solid #fca5a5;
+        }
+        #compatibility-check-screen .compatibility-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        #compatibility-check-screen .compatibility-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        #compatibility-check-screen .compatibility-item img {
+            max-width: 70px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+            background-color: #f9fafb;
+            padding: 4px;
+        }
+        #compatibility-check-screen .item-details {
+            flex-grow: 1;
+        }
+        #compatibility-check-screen .item-details h3 {
+            margin: 0 0 8px 0;
+            font-size: 20px;
+            color: #1f2937;
+            font-weight: 600;
+        }
+        #compatibility-check-screen .item-details p {
+            margin: 0;
+            font-size: 16px;
+            color: #6b7280;
+        }
+        #compatibility-check-screen .compatibility-indicator {
+            min-width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            color: white;
+            font-size: 20px;
+            margin-left: 15px;
+        }
+        #compatibility-check-screen .indicator-ok {
+            background-color: #10b981;
+        }
+        #compatibility-check-screen .indicator-error {
+            background-color: #ef4444;
+        }
+        #compatibility-check-screen .indicator-warning {
+            background-color: #facc15;
+            color: #1f2937;
+        }
+
+        #recommended-builds-screen .recommended-builds-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        #recommended-builds-screen .build-card {
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #ffffff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+        #recommended-builds-screen .build-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        #recommended-builds-screen .build-card-header {
+            background-color: #3b82f6;
+            color: white;
+            padding: 15px 20px;
+            font-weight: 700;
+            font-size: 20px;
+            text-align: center;
+            border-bottom: 1px solid #2563eb;
+        }
+        #recommended-builds-screen .build-card-body {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        #recommended-builds-screen .build-card-body ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+        #recommended-builds-screen .build-card-body ul li {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #4b5563;
+            display: flex;
+            align-items: center;
+        }
+        #recommended-builds-screen .build-card-body ul li:last-child {
+            margin-bottom: 0;
+        }
+        #recommended-builds-screen .build-card-body ul li strong {
+            margin-right: 8px;
+            color: #1f2937;
+        }
+        #recommended-builds-screen .build-price {
+            font-size: 32px;
+            font-weight: 700;
+            color: #10b981;
+            text-align: right;
+            margin-top: auto;
+            padding-top: 15px;
+            border-top: 1px dashed #e5e7eb;
+        }
+        #recommended-builds-screen .build-price span {
+            font-size: 18px;
+            font-weight: 500;
+            color: #6b7280;
+            margin-left: 8px;
+        }
+        #recommended-builds-screen .select-button-container {
+            text-align: center;
+            margin-top: 25px;
+        }
+        #recommended-builds-screen .select-button {
+            background-color: #10b981;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 17px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        #recommended-builds-screen .select-button:hover {
+            background-color: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        #final-confirmation-screen .summary-section {
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            background-color: #f9fafb;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        #final-confirmation-screen .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed #e5e7eb;
+        }
+        #final-confirmation-screen .summary-item:last-child {
+            border-bottom: none;
+        }
+        #final-confirmation-screen .summary-item .label {
+            font-weight: 600;
+            color: #4b5563;
+            flex-basis: 40%;
+            font-size: 16px;
+        }
+        #final-confirmation-screen .summary-item .value {
+            color: #1f2937;
+            flex-basis: 60%;
+            text-align: right;
+            font-size: 16px;
+        }
+        #final-confirmation-screen .total-cost-display {
+            text-align: right;
+            margin-top: 25px;
+            font-size: 36px;
+            font-weight: 700;
+            color: #10b981;
+            border-top: 2px solid #d1d5db;
+            padding-top: 20px;
+        }
+
+        #loadingIndicator, #llmError {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            display: none;
+        }
+        #loadingIndicator {
+            background-color: #e0f2fe;
+            color: #0c4a6e;
+            text-align: center;
+        }
+        #llmError {
+            background-color: #fee2e2;
+            color: #991b1b;
+            text-align: center;
+        }
+
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px auto;
+                padding: 20px;
+            }
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav-icons {
+                margin-top: 10px;
+                width: 100%;
+                justify-content: flex-end;
+            }
+            h2 {
+                font-size: 24px;
+            }
+            #initial-input-screen .form-section {
+                grid-template-columns: 1fr;
+            }
+            #cost-calculation-screen .part-list,
+            #over-budget-screen .parts-grid,
+            #alternative-parts-screen .alternative-parts-grid,
+            #recommended-builds-screen .recommended-builds-grid {
+                grid-template-columns: 1fr;
+            }
+            .button-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .button-group button {
+                width: 100%;
+            }
+            #over-budget-screen .part-card,
+            #alternative-parts-screen .alternative-option,
+            #compatibility-check-screen .compatibility-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            #over-budget-screen .part-card img,
+            #alternative-parts-screen .alternative-option img,
+            #compatibility-check-screen .compatibility-item img {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            #compatibility-check-screen .compatibility-indicator {
+                margin-top: 10px;
+                margin-left: 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -313,7 +820,122 @@
             </form>
         </div>
 
-        <script>
+        <div id="cost-calculation-screen" class="screen">
+            <h2>Cost Calculation Summary</h2>
+            <div class="cost-summary">
+                <p>Estimated Cost:</p>
+                <p class="total-cost" id="estimatedCostDisplay">PHP 0</p>
+                <p id="budgetStatus" class="font-bold"></p>
+            </div>
+            <div class="part-list" id="calculatedPartList">
+            </div>
+            <div class="button-group justify-between">
+                <button class="primary" onclick="showScreen('alternative-parts-screen')">Suggest Alternative/Cheaper</button>
+                <button class="success" onclick="showScreen('compatibility-check-screen')">Proceed to Compatibility</button>
+            </div>
+        </div>
+
+        <div id="over-budget-screen" class="screen">
+            <h2>Over Budget!</h2>
+            <div class="budget-warning">OVER BUDGET!</div>
+            <div class="budget-info">
+                Your current build is <span class="amount" id="overBudgetAmount">PHP 0</span> over your budget.
+            </div>
+            <div class="parts-grid" id="overBudgetPartList">
+            </div>
+            <div class="button-group justify-center">
+                <button class="primary" onclick="showScreen('alternative-parts-screen')">Suggest Cheaper Alternatives</button>
+                <button class="secondary" onclick="showScreen('initial-input-screen')">Go Back & Adjust</button>
+            </div>
+        </div>
+
+        <div id="alternative-parts-screen" class="screen">
+            <h2>Alternative Parts</h2>
+            <div class="savings-summary">
+                Expected Savings: <strong id="expectedSavings">PHP 0</strong>
+            </div>
+            <div class="alternative-parts-grid" id="alternativePartsGrid">
+            </div>
+            <div class="button-group justify-end">
+                <button class="success" onclick="saveAlternativesAndRecalculate()">SAVE & Recalculate</button>
+            </div>
+        </div>
+
+        <div id="compatibility-check-screen" class="screen">
+            <h2>Compatibility Check</h2>
+            <div class="compatibility-status" id="compatibilityStatus">
+            </div>
+            <div class="compatibility-grid" id="compatibilityGrid">
+            </div>
+            <div class="button-group justify-between">
+                <button class="secondary" onclick="showScreen('cost-calculation-screen')">Back to Cost Summary</button>
+                <button class="primary" onclick="showScreen('recommended-builds-screen')">View Recommended Builds</button>
+            </div>
+        </div>
+
+        <div id="recommended-builds-screen" class="screen">
+            <h2>Recommended Builds</h2>
+            <div class="recommended-builds-grid" id="recommendedBuildsGrid">
+            </div>
+            <div class="button-group justify-end">
+                <button class="primary" onclick="showScreen('final-confirmation-screen')">Proceed to Checkout</button>
+            </div>
+        </div>
+
+        <div id="final-confirmation-screen" class="screen">
+            <h2>Final Build Confirmation</h2>
+            <div class="summary-section">
+                <div class="summary-item">
+                    <span class="label">Budget:</span>
+                    <span class="value" id="finalBudget"></span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Intended Usage:</span>
+                    <span class="value" id="finalUsage"></span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">CPU:</span>
+                    <span class="value" id="finalCpu"></span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">GPU:</span>
+                    <span class="value" id="finalGpu"></span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">RAM:</span>
+                    <span class="value" id="finalRam"></span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Storage:</span>
+                    <span class="value" id="finalStorage"></span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Motherboard:</span>
+                    <span class="value" id="finalMotherboard"></span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">PSU:</span>
+                    <span class="value" id="finalPsu"></span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">PC Case:</span>
+                    <span class="value" id="finalCase"></span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Cooling System:</span>
+                    <span class="value" id="finalCooling"></span>
+                </div>
+            </div>
+            <div class="total-cost-display" id="finalTotalCost">
+            </div>
+            <div class="button-group justify-center">
+                <button class="success" onclick="alert('Build Confirmed! Proceeding to external checkout simulator.')">Confirm & Checkout</button>
+                <button class="secondary" onclick="showScreen('initial-input-screen')">Start New Build</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
         const pcPartsData = {
             'cpu': {
                 'intel-i5-12400f': { name: 'Intel Core i5-12400F', price: 9000, img: 'https://placehold.co/60x60/d1d5db/4b5563?text=CPU', socket: 'LGA1700' },
@@ -382,3 +1004,644 @@
         });
 
 
+        let currentBuild = {};
+        let userBudget = 0;
+
+        function showScreen(screenId) {
+            document.querySelectorAll('.screen').forEach(screen => {
+                screen.classList.remove('active');
+            });
+            document.getElementById(screenId).classList.add('active');
+
+            if (screenId === 'cost-calculation-screen') {
+                calculateAndDisplayCost();
+            } else if (screenId === 'over-budget-screen') {
+                displayOverBudgetParts();
+            } else if (screenId === 'alternative-parts-screen') {
+                displayAlternativeParts();
+            } else if (screenId === 'compatibility-check-screen') {
+                performCompatibilityCheck();
+            } else if (screenId === 'recommended-builds-screen') {
+                displayRecommendedBuilds();
+            } else if (screenId === 'final-confirmation-screen') {
+                displayFinalConfirmation();
+            }
+        }
+
+        document.getElementById('initialInputForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const form = event.target;
+            userBudget = parseFloat(form.budget.value) || 0;
+
+            currentBuild = {};
+            let totalCost = 0;
+
+            const parts = ['cpu', 'gpu', 'ram', 'storage', 'motherboard', 'psu', 'case', 'cooling'];
+            let allPartsSelected = true;
+
+            parts.forEach(partType => {
+                const selectedValue = form[partType].value;
+                if (selectedValue) {
+                    const partInfo = pcPartsData[partType][selectedValue];
+                    if (partInfo) {
+                        currentBuild[partType] = { ...partInfo, id: selectedValue };
+                        totalCost += partInfo.price;
+                    }
+                } else {
+                    allPartsSelected = false;
+                }
+            });
+
+            if (!allPartsSelected) {
+                alert('Please select all PC parts before calculating the cost.');
+                return;
+            }
+
+            currentBuild.totalCost = totalCost;
+
+            if (totalCost > userBudget && userBudget > 0) {
+                showScreen('over-budget-screen');
+            } else {
+                showScreen('cost-calculation-screen');
+            }
+        });
+
+        async function getSmartBuildSuggestion() {
+            const budgetInput = document.getElementById('budget');
+            const usageSelect = document.getElementById('usage');
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const llmError = document.getElementById('llmError');
+
+            const budget = parseFloat(budgetInput.value);
+            const usage = usageSelect.value;
+
+            llmError.classList.add('hidden');
+
+            if (!budget || budget <= 0) {
+                llmError.textContent = 'Please enter a valid budget to get a smart suggestion.';
+                llmError.classList.remove('hidden');
+                return;
+            }
+            if (!usage) {
+                llmError.textContent = 'Please select intended usage to get a smart suggestion.';
+                llmError.classList.remove('hidden');
+                return;
+            }
+
+            loadingIndicator.classList.remove('hidden');
+            loadingIndicator.textContent = 'Generating smart suggestion...';
+
+            // Prepare available part IDs for the LLM
+            const availablePartIds = {};
+            for (const category in pcPartsData) {
+                availablePartIds[category] = Object.keys(pcPartsData[category]);
+            }
+
+            const prompt = `Suggest a balanced PC build for a budget of ${budget} PHP, primarily for ${usage}. 
+                            Provide the output as a JSON object where keys are part categories (cpu, gpu, ram, storage, motherboard, psu, case, cooling)
+                            and values are the exact IDs from the following available options for each category.
+                            Available options:
+                            CPU: ${availablePartIds.cpu.join(', ')}
+                            GPU: ${availablePartIds.gpu.join(', ')}
+                            RAM: ${availablePartIds.ram.join(', ')}
+                            Storage: ${availablePartIds.storage.join(', ')}
+                            Motherboard: ${availablePartIds.motherboard.join(', ')}
+                            PSU: ${availablePartIds.psu.join(', ')}
+                            Case: ${availablePartIds.case.join(', ')}
+                            Cooling: ${availablePartIds.cooling.join(', ')}
+                            Ensure the total cost of the suggested parts is within the budget if possible, or slightly above if necessary for a balanced build.
+                            The JSON should look like this: {"cpu": "some-cpu-id", "gpu": "some-gpu-id", ...}`;
+
+
+            let chatHistory = [];
+            chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+
+            const payload = {
+                contents: chatHistory,
+                generationConfig: {
+                    responseMimeType: "application/json",
+                    responseSchema: {
+                        type: "OBJECT",
+                        properties: {
+                            "cpu": { "type": "STRING" },
+                            "gpu": { "type": "STRING" },
+                            "ram": { "type": "STRING" },
+                            "storage": { "type": "STRING" },
+                            "motherboard": { "type": "STRING" },
+                            "psu": { "type": "STRING" },
+                            "case": { "type": "STRING" },
+                            "cooling": { "type": "STRING" }
+                        },
+                        "propertyOrdering": ["cpu", "gpu", "ram", "storage", "motherboard", "psu", "case", "cooling"]
+                    }
+                }
+            };
+
+            const apiKey = "";
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const jsonString = result.candidates[0].content.parts[0].text;
+                    const suggestedBuild = JSON.parse(jsonString);
+
+                    for (const partType in suggestedBuild) {
+                        const selectElement = document.getElementById(partType);
+                        const suggestedId = suggestedBuild[partType];
+                        // Validate if the suggested ID exists in our parts data
+                        if (selectElement && pcPartsData[partType] && pcPartsData[partType][suggestedId]) {
+                            selectElement.value = suggestedId;
+                        } else {
+                            console.warn(`LLM suggested invalid part ID for ${partType}: ${suggestedId}`);
+                        }
+                    }
+                    loadingIndicator.classList.add('hidden');
+                    alert('Smart build suggestion applied! Review the selections and calculate cost.');
+                } else {
+                    llmError.textContent = 'Could not generate a smart build suggestion. Please try again.';
+                    llmError.classList.remove('hidden');
+                    loadingIndicator.classList.add('hidden');
+                }
+            } catch (error) {
+                console.error('Error fetching smart build suggestion:', error);
+                llmError.textContent = `Error: ${error.message}. Failed to get smart suggestion.`;
+                llmError.classList.remove('hidden');
+                loadingIndicator.classList.add('hidden');
+            }
+        }
+
+        document.getElementById('smartSuggestBtn').addEventListener('click', getSmartBuildSuggestion);
+
+
+        function calculateAndDisplayCost() {
+            const estimatedCostDisplay = document.getElementById('estimatedCostDisplay');
+            const budgetStatus = document.getElementById('budgetStatus');
+            const calculatedPartList = document.getElementById('calculatedPartList');
+
+            let totalCost = currentBuild.totalCost || 0;
+
+            estimatedCostDisplay.textContent = `PHP ${totalCost.toLocaleString()}`;
+            if (userBudget > 0) {
+                if (totalCost <= userBudget) {
+                    estimatedCostDisplay.classList.remove('over-budget');
+                    budgetStatus.classList.remove('text-red-600');
+                    budgetStatus.classList.add('text-green-600');
+                    budgetStatus.textContent = 'Within Budget!';
+                } else {
+                    estimatedCostDisplay.classList.add('over-budget');
+                    budgetStatus.classList.remove('text-green-600');
+                    budgetStatus.classList.add('text-red-600');
+                    budgetStatus.textContent = `Over Budget by PHP ${(totalCost - userBudget).toLocaleString()}!`;
+                }
+            } else {
+                estimatedCostDisplay.classList.remove('over-budget');
+                budgetStatus.classList.remove('text-red-600', 'text-green-600');
+                budgetStatus.textContent = '';
+            }
+
+            calculatedPartList.innerHTML = '';
+            for (const partType in currentBuild) {
+                if (partType !== 'totalCost' && currentBuild[partType].name) {
+                    const partItem = document.createElement('div');
+                    partItem.classList.add('part-item');
+                    partItem.innerHTML = `
+                        <img src="${currentBuild[partType].img}" alt="${currentBuild[partType].name}">
+                        <h3>${partType.toUpperCase()}</h3>
+                        <p>${currentBuild[partType].name}</p>
+                        <p>PHP ${currentBuild[partType].price.toLocaleString()}</p>
+                    `;
+                    calculatedPartList.appendChild(partItem);
+                }
+            }
+        }
+
+        function displayOverBudgetParts() {
+            const overBudgetAmount = document.getElementById('overBudgetAmount');
+            const overBudgetPartList = document.getElementById('overBudgetPartList');
+
+            const totalCost = currentBuild.totalCost || 0;
+            const excessAmount = totalCost - userBudget;
+            overBudgetAmount.textContent = `PHP ${excessAmount.toLocaleString()}`;
+
+            overBudgetPartList.innerHTML = '';
+
+            for (const partType in currentBuild) {
+                if (partType !== 'totalCost' && currentBuild[partType].name) {
+                    const part = currentBuild[partType];
+                    const partCard = document.createElement('div');
+                    partCard.classList.add('part-card');
+                    partCard.innerHTML = `
+                        <img src="${part.img}" alt="${part.name}">
+                        <div class="part-details">
+                            <h3>${partType.toUpperCase()}</h3>
+                            <p>${part.name}</p>
+                            <p class="price">PHP ${part.price.toLocaleString()}</p>
+                        </div>
+                    `;
+                    overBudgetPartList.appendChild(partCard);
+                }
+            }
+        }
+
+        function displayAlternativeParts() {
+            const alternativePartsGrid = document.getElementById('alternativePartsGrid');
+            alternativePartsGrid.innerHTML = '';
+            let potentialSavings = 0;
+
+            const partsToSuggestAlternativesFor = ['cpu', 'gpu', 'ram', 'storage'];
+
+            partsToSuggestAlternativesFor.forEach(partType => {
+                const currentPart = currentBuild[partType];
+                if (!currentPart) return;
+
+                const categoryDiv = document.createElement('div');
+                categoryDiv.classList.add('part-category');
+                categoryDiv.innerHTML = `<h3>${partType.toUpperCase()}</h3>`;
+
+                let currentOptionHtml = `
+                    <div class="alternative-option">
+                        <input type="radio" id="${partType}-current" name="${partType}-option" value="${currentPart.id}" checked>
+                        <img src="${currentPart.img}" alt="${currentPart.name}">
+                        <div class="option-details">
+                            <p>${currentPart.name} (Current)</p>
+                            <p class="price-diff">No change</p>
+                        </div>
+                    </div>
+                `;
+                categoryDiv.insertAdjacentHTML('beforeend', currentOptionHtml);
+
+                const alternatives = getAlternativesForPart(partType, currentPart.price);
+                alternatives.forEach(alt => {
+                    if (alt.id !== currentPart.id) {
+                        const saving = currentPart.price - alt.price;
+                        if (saving > 0) {
+                            potentialSavings += saving;
+                            let altOptionHtml = `
+                                <div class="alternative-option">
+                                    <input type="radio" id="${partType}-${alt.id}" name="${partType}-option" value="${alt.id}">
+                                    <img src="${alt.img}" alt="${alt.name}">
+                                    <div class="option-details">
+                                        <p>${alt.name}</p>
+                                        <p class="price-diff">Save PHP ${saving.toLocaleString()}</p>
+                                    </div>
+                                </div>
+                            `;
+                            categoryDiv.insertAdjacentHTML('beforeend', altOptionHtml);
+                        }
+                    }
+                });
+
+                alternativePartsGrid.appendChild(categoryDiv);
+            });
+
+            document.getElementById('expectedSavings').textContent = `PHP ${potentialSavings.toLocaleString()}`;
+        }
+
+        function getAlternativesForPart(partType, currentPrice) {
+            const alternatives = [];
+            for (const key in pcPartsData[partType]) {
+                const part = pcPartsData[partType][key];
+                if (part.price < currentPrice) {
+                    alternatives.push(part);
+                }
+            }
+            return alternatives.sort((a, b) => a.price - b.price);
+        }
+
+        function saveAlternativesAndRecalculate() {
+            let newTotalCost = 0;
+
+            const partsToConsider = ['cpu', 'gpu', 'ram', 'storage', 'motherboard', 'psu', 'case', 'cooling'];
+
+            partsToConsider.forEach(partType => {
+                const radioButtons = document.querySelectorAll(`input[name="${partType}-option"]:checked`);
+                if (radioButtons.length > 0) {
+                    const selectedAlternativeId = radioButtons[0].value;
+                    const selectedPart = pcPartsData[partType][selectedAlternativeId];
+                    if (selectedPart) {
+                        currentBuild[partType] = { ...selectedPart, id: selectedAlternativeId };
+                        newTotalCost += selectedPart.price;
+                    }
+                } else if (currentBuild[partType]) {
+                    newTotalCost += currentBuild[partType].price;
+                }
+            });
+
+            currentBuild.totalCost = newTotalCost;
+            showScreen('cost-calculation-screen');
+        }
+
+        function performCompatibilityCheck() {
+            const compatibilityStatusDiv = document.getElementById('compatibilityStatus');
+            const compatibilityGrid = document.getElementById('compatibilityGrid');
+            compatibilityGrid.innerHTML = '';
+
+            let allCompatible = true;
+            let issues = [];
+
+            const cpuSocket = currentBuild.cpu?.socket;
+            const moboSocket = currentBuild.motherboard?.socket;
+            if (cpuSocket && moboSocket && cpuSocket !== moboSocket) {
+                issues.push({
+                    type: 'error',
+                    message: `CPU socket (${cpuSocket}) is incompatible with Motherboard socket (${moboSocket}).`,
+                    parts: [currentBuild.cpu, currentBuild.motherboard]
+                });
+                allCompatible = false;
+            } else if (!cpuSocket || !moboSocket) {
+                 issues.push({
+                    type: 'warning',
+                    message: `CPU or Motherboard socket information missing. Cannot fully verify compatibility.`,
+                    parts: [currentBuild.cpu, currentBuild.motherboard].filter(Boolean)
+                });
+            }
+
+            const ramType = currentBuild.ram?.type;
+            const moboRamType = currentBuild.motherboard?.ramType;
+            if (ramType && moboRamType && ramType !== moboRamType) {
+                issues.push({
+                    type: 'error',
+                    message: `RAM type (${ramType}) is incompatible with Motherboard RAM type (${moboRamType}).`,
+                    parts: [currentBuild.ram, currentBuild.motherboard]
+                });
+                allCompatible = false;
+            } else if (!ramType || !moboRamType) {
+                issues.push({
+                    type: 'warning',
+                    message: `RAM or Motherboard RAM type information missing. Cannot fully verify compatibility.`,
+                    parts: [currentBuild.ram, currentBuild.motherboard].filter(Boolean)
+                });
+            }
+
+            const caseFormFactor = currentBuild.case?.formFactor;
+            const moboFormFactor = currentBuild.motherboard?.name.includes('Micro-ATX') ? 'Micro-ATX' : 'ATX';
+            if (caseFormFactor && moboFormFactor) {
+                if (caseFormFactor === 'Micro-ATX' && moboFormFactor === 'ATX') {
+                    issues.push({
+                        type: 'error',
+                        message: `Micro-ATX case (${currentBuild.case.name}) may not support ATX Motherboard (${currentBuild.motherboard.name}).`,
+                        parts: [currentBuild.case, currentBuild.motherboard]
+                    });
+                    allCompatible = false;
+                }
+            } else if (!caseFormFactor || !moboFormFactor) {
+                issues.push({
+                    type: 'warning',
+                    message: `Case or Motherboard form factor information missing. Cannot fully verify compatibility.`,
+                    parts: [currentBuild.case, currentBuild.motherboard].filter(Boolean)
+                });
+            }
+
+            const psuWattage = parseInt(currentBuild.psu?.name.match(/\d+/)?.[0]) || 0;
+            const estimatedPowerDraw = (currentBuild.cpu?.price > 20000 && currentBuild.gpu?.price > 30000) ? 600 : 300;
+
+            if (psuWattage > 0 && psuWattage < estimatedPowerDraw) {
+                issues.push({
+                    type: 'warning',
+                    message: `PSU (${currentBuild.psu.name}) might be insufficient for this build. Estimated draw: ~${estimatedPowerDraw}W.`,
+                    parts: [currentBuild.psu, currentBuild.cpu, currentBuild.gpu].filter(Boolean)
+                });
+            } else if (psuWattage === 0) {
+                 issues.push({
+                    type: 'warning',
+                    message: `PSU wattage information missing. Cannot verify power compatibility.`,
+                    parts: [currentBuild.psu].filter(Boolean)
+                });
+            }
+
+
+            if (issues.length > 0) {
+                const hasErrors = issues.some(issue => issue.type === 'error');
+                if (hasErrors) {
+                    compatibilityStatusDiv.classList.remove('status-ok', 'status-warning');
+                    compatibilityStatusDiv.classList.add('status-error');
+                    compatibilityStatusDiv.textContent = 'Compatibility Issues Found!';
+                } else {
+                    compatibilityStatusDiv.classList.remove('status-ok', 'status-error');
+                    compatibilityStatusDiv.classList.add('status-warning');
+                    compatibilityStatusDiv.textContent = 'Compatibility Warnings Found!';
+                }
+            } else {
+                compatibilityStatusDiv.classList.remove('status-warning', 'status-error');
+                compatibilityStatusDiv.classList.add('status-ok');
+                compatibilityStatusDiv.textContent = 'All selected parts are compatible!';
+            }
+
+            if (issues.length > 0) {
+                issues.forEach(issue => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.classList.add('compatibility-item');
+                    let indicatorClass = '';
+                    let indicatorIcon = '';
+
+                    if (issue.type === 'error') {
+                        indicatorClass = 'indicator-error';
+                        indicatorIcon = 'X';
+                    } else if (issue.type === 'warning') {
+                        indicatorClass = 'indicator-warning';
+                        indicatorIcon = '!';
+                    }
+
+                    const partImagesHtml = issue.parts.map(part => `
+                        <img src="${part.img}" alt="${part.name}" title="${part.name}">
+                    `).join('');
+
+                    itemDiv.innerHTML = `
+                        ${partImagesHtml}
+                        <div class="item-details">
+                            <h3>${issue.message}</h3>
+                            <p>${issue.parts.map(p => p.name).join(' & ')}</p>
+                        </div>
+                        <div class="compatibility-indicator ${indicatorClass}">${indicatorIcon}</div>
+                    `;
+                    compatibilityGrid.appendChild(itemDiv);
+                });
+            } else {
+                 for (const partType in currentBuild) {
+                    if (partType !== 'totalCost' && currentBuild[partType].name) {
+                        const part = currentBuild[partType];
+                        const itemDiv = document.createElement('div');
+                        itemDiv.classList.add('compatibility-item');
+                        itemDiv.innerHTML = `
+                            <img src="${part.img}" alt="${part.name}" title="${part.name}">
+                            <div class="item-details">
+                                <h3>${part.name}</h3>
+                                <p>${partType.toUpperCase()}</p>
+                            </div>
+                            <div class="compatibility-indicator indicator-ok">✔</div>
+                        `;
+                        compatibilityGrid.appendChild(itemDiv);
+                    }
+                }
+            }
+        }
+
+        function displayRecommendedBuilds() {
+            const recommendedBuildsGrid = document.getElementById('recommendedBuildsGrid');
+            recommendedBuildsGrid.innerHTML = '';
+
+            const usage = document.getElementById('usage').value;
+            let builds = [];
+
+            if (usage === 'gaming') {
+                builds = [
+                    {
+                        name: 'High-End Gaming Build',
+                        parts: {
+                            cpu: pcPartsData.cpu['intel-i7-13700k'],
+                            gpu: pcPartsData.gpu['nvidia-rtx-4070'],
+                            ram: pcPartsData.ram['32gb-ddr5'],
+                            storage: pcPartsData.storage['1tb-ssd'],
+                            motherboard: pcPartsData.motherboard['z790-a-wifi'],
+                            psu: pcPartsData.psu['750w-gold'],
+                            case: pcPartsData.case['full-tower'],
+                            cooling: pcPartsData.cooling['aio-liquid-360mm']
+                        }
+                    },
+                    {
+                        name: 'Mid-Range Gaming Build',
+                        parts: {
+                            cpu: pcPartsData.cpu['amd-ryzen-5-5600'],
+                            gpu: pcPartsData.gpu['amd-radeon-rx-6600'],
+                            ram: pcPartsData.ram['16gb-ddr4'],
+                            storage: pcPartsData.storage['512gb-ssd'],
+                            motherboard: pcPartsData.motherboard['b550m-ds3h'],
+                            psu: pcPartsData.psu['650w-gold'],
+                            case: pcPartsData.case['atx-mid-tower'],
+                            cooling: pcPartsData.cooling['air-cooler']
+                        }
+                    }
+                ];
+            } else if (usage === 'productivity') {
+                builds = [
+                    {
+                        name: 'Productivity Workstation',
+                        parts: {
+                            cpu: pcPartsData.cpu['intel-i7-13700k'],
+                            gpu: pcPartsData.gpu['nvidia-rtx-3050'],
+                            ram: pcPartsData.ram['32gb-ddr4'],
+                            storage: pcPartsData.storage['1tb-ssd'],
+                            motherboard: pcPartsData.motherboard['b660m-pro'],
+                            psu: pcPartsData.psu['500w-bronze'],
+                            case: pcPartsData.case['microatx-mini-tower'],
+                            cooling: pcPartsData.cooling['air-cooler']
+                        }
+                    }
+                ];
+            } else {
+                builds = [
+                    {
+                        name: 'Balanced Everyday Build',
+                        parts: {
+                            cpu: pcPartsData.cpu['intel-i5-12400f'],
+                            gpu: pcPartsData.gpu['nvidia-rtx-3050'],
+                            ram: pcPartsData.ram['16gb-ddr4'],
+                            storage: pcPartsData.storage['512gb-ssd'],
+                            motherboard: pcPartsData.motherboard['b660m-pro'],
+                            psu: pcPartsData.psu['500w-bronze'],
+                            case: pcPartsData.case['atx-mid-tower'],
+                            cooling: pcPartsData.cooling['air-cooler']
+                        }
+                    }
+                ];
+            }
+
+            builds.forEach((build, index) => {
+                let buildTotalCost = 0;
+                const partListHtml = Object.keys(build.parts).map(partKey => {
+                    const part = build.parts[partKey];
+                    if (part) {
+                        buildTotalCost += part.price;
+                        return `<li><strong>${partKey.toUpperCase()}:</strong> ${part.name}</li>`;
+                    }
+                    return '';
+                }).join('');
+
+                const buildCard = document.createElement('div');
+                buildCard.classList.add('build-card');
+                buildCard.innerHTML = `
+                    <div class="build-card-header">${build.name}</div>
+                    <div class="build-card-body">
+                        <ul>
+                            ${partListHtml}
+                        </ul>
+                        <div class="build-price">
+                            PHP ${buildTotalCost.toLocaleString()} <span>(Estimated)</span>
+                        </div>
+                        <div class="select-button-container">
+                            <button class="select-button" data-build-index="${index}">Select This Build</button>
+                        </div>
+                    </div>
+                `;
+                recommendedBuildsGrid.appendChild(buildCard);
+            });
+
+            recommendedBuildsGrid.querySelectorAll('.select-button').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const buildIndex = event.target.dataset.buildIndex;
+                    const selectedBuild = builds[buildIndex];
+                    currentBuild = { ...selectedBuild.parts, totalCost: 0 };
+                    let newTotalCost = 0;
+                     for (const partType in currentBuild) {
+                         if (currentBuild[partType]?.price) {
+                             newTotalCost += currentBuild[partType].price;
+                         }
+                     }
+                    currentBuild.totalCost = newTotalCost;
+
+                    alert(`"${selectedBuild.name}" has been selected! Proceeding to final confirmation.`);
+                    showScreen('final-confirmation-screen');
+                });
+            });
+        }
+
+
+        function displayFinalConfirmation() {
+            document.getElementById('finalBudget').textContent = userBudget > 0 ? `PHP ${userBudget.toLocaleString()}` : 'Not specified';
+            document.getElementById('finalUsage').textContent = document.getElementById('usage').options[document.getElementById('usage').selectedIndex].text;
+
+            document.getElementById('finalCpu').textContent = currentBuild.cpu ? currentBuild.cpu.name : 'N/A';
+            document.getElementById('finalGpu').textContent = currentBuild.gpu ? currentBuild.gpu.name : 'N/A';
+            document.getElementById('finalRam').textContent = currentBuild.ram ? currentBuild.ram.name : 'N/A';
+            document.getElementById('finalStorage').textContent = currentBuild.storage ? currentBuild.storage.name : 'N/A';
+            document.getElementById('finalMotherboard').textContent = currentBuild.motherboard ? currentBuild.motherboard.name : 'N/A';
+            document.getElementById('finalPsu').textContent = currentBuild.psu ? currentBuild.psu.name : 'N/A';
+            document.getElementById('finalCase').textContent = currentBuild.case ? currentBuild.case.name : 'N/A';
+            document.getElementById('finalCooling').textContent = currentBuild.cooling ? currentBuild.cooling.name : 'N/A';
+
+            document.getElementById('finalTotalCost').textContent = `Total: PHP ${currentBuild.totalCost.toLocaleString()}`;
+        }
+
+        document.getElementById('uploadImageBtn').addEventListener('click', () => {
+            document.getElementById('uploadImage').click();
+        });
+
+        document.getElementById('uploadImage').addEventListener('change', (event) => {
+            const fileName = event.target.files[0]?.name;
+            if (fileName) {
+                const uploadSection = document.querySelector('.image-upload-section');
+                uploadSection.querySelector('p:first-child').textContent = `File selected: ${fileName}`;
+                uploadSection.querySelector('p:nth-child(2)').style.display = 'none';
+                uploadSection.querySelector('button').textContent = 'Change Image';
+            }
+        });
+
+        showScreen('initial-input-screen');
+    </script>
+</body>
+</html>
